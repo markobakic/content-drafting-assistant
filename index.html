@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Telekom Srbija — Generator objava</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <img class="logo-img" src="/assets/telekom-logo-1-1.png" alt="telekom logo" />
+   
+          <span class="logo-sub">Generator objava</span>
+      </div>
+      <div class="header-badge">
+        <span class="badge-dot"></span>
+        AI-powered
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+
+      <section class="hero">
+        <h1 class="hero-title">Kreiraj objavu za društvene mreže</h1>
+        <p class="hero-desc">Unesi URL sajta, izaberi mrežu — AI generiše gotovu objavu prilagođenu platformi.</p>
+      </section>
+
+      <div class="card form-card">
+        <form id="generate-form" novalidate>
+
+          <div class="field-group">
+            <label class="field-label" for="url-input">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              URL veb sajta
+            </label>
+            <div class="input-wrapper">
+              <input
+                type="url"
+                id="url-input"
+                name="url"
+                class="text-input"
+                placeholder="https://www.primer.com/stranica"
+                autocomplete="off"
+                spellcheck="false"
+              />
+              <span class="input-hint" id="url-error" role="alert" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="network-select">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Društvena mreža
+            </label>
+            <div class="select-wrapper">
+              <select id="network-select" name="network" class="select-input">
+                <option value="" disabled selected>Izaberi platformu...</option>
+                <option value="x">𝕏 (Twitter / X)</option>
+                <option value="instagram">Instagram</option>
+                <option value="linkedin">LinkedIn</option>
+              </select>
+              <svg class="select-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </div>
+
+          <div class="network-chips" aria-hidden="true">
+            <button type="button" class="chip" data-network="x">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.745l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              X / Twitter
+            </button>
+            <button type="button" class="chip" data-network="instagram">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </button>
+            <button type="button" class="chip" data-network="linkedin">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </button>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submit-btn">
+            <span class="btn-text">Generiši objavu</span>
+            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <span class="btn-spinner" aria-hidden="true"></span>
+          </button>
+
+        </form>
+      </div>
+
+      <div class="result-section" id="result-section" aria-live="polite" aria-label="Rezultat generisanja">
+
+        <div class="result-loading" id="result-loading" style="display:none;">
+          <div class="loading-bar">
+            <div class="loading-bar-inner"></div>
+          </div>
+          <div class="loading-steps">
+            <span class="loading-step active" id="step-1">Analizira sajt...</span>
+            <span class="loading-step" id="step-2">Kreira sadržaj...</span>
+            <span class="loading-step" id="step-3">Prilagođava platformi...</span>
+          </div>
+        </div>
+
+        <div class="result-card" id="result-card" style="display:none;">
+          <div class="result-header">
+            <div class="result-network-badge" id="result-network-badge"></div>
+            <div class="result-actions">
+              <button class="action-btn" id="copy-btn" title="Kopiraj tekst">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                Kopiraj
+              </button>
+              <button class="action-btn" id="regenerate-btn" title="Generiši ponovo">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                Ponovi
+              </button>
+            </div>
+          </div>
+
+          <div class="result-source" id="result-source"></div>
+
+          <div class="result-title" id="result-title"></div>
+          <div class="result-body" id="result-body"></div>
+          <div class="result-hashtags" id="result-hashtags"></div>
+          <div class="result-meta" id="result-meta"></div>
+
+        </div>
+
+        <div class="result-error" id="result-error" style="display:none;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span id="error-message">Došlo je do greške. Pokušaj ponovo.</span>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>© 2026 Telekom Srbija a.d.</span>
+      <span class="footer-dot">·</span>
+      <span>AI generator objava</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
