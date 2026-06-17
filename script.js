@@ -1,6 +1,8 @@
 /* ─── Telekom Srbija — Generator objava (script.js) ─────────── */
 
-const BACKEND_URL = 'https://sinisa1989.app.n8n.cloud/webhook-test/telekom-content-drafting-assistant'; /* ← promeni na svoju bekend adresu */
+// const BACKEND_URL = 'https://sinisa1989.app.n8n.cloud/webhook-test/telekom-content-drafting-assistant'
+const BACKEND_URL = 'https://sinisa1989.app.n8n.cloud/webhook/telekom-content-drafting-assistant'
+; /* ← promeni na svoju bekend adresu */
 
 /* Character limits per network */
 const CHAR_LIMITS = {
