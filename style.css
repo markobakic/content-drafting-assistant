@@ -581,6 +581,147 @@ body {
 .char-count.over-limit { color: var(--ts-red); font-weight: 600; }
 .char-count.near-limit { color: #CA8A04; font-weight: 600; }
 
+/* ─── Edit Mode ──────────────────────────────────────────────── */
+.result-card.editing .result-source { opacity: .5; }
+ 
+.edit-field {
+  padding: 14px 24px;
+  border-top: 1px dashed var(--ts-gray-200);
+  animation: slideUp .2s ease;
+}
+ 
+.result-field:first-of-type .edit-field {
+  border-top: none;
+}
+ 
+.edit-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ts-blue-mid);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-bottom: 7px;
+}
+ 
+.edit-label-hint {
+  font-weight: 500;
+  text-transform: none;
+  color: var(--ts-gray-500);
+  letter-spacing: 0;
+}
+ 
+.edit-input,
+.edit-textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--ts-gray-900);
+  background: var(--ts-gray-100);
+  border: 1.5px solid var(--ts-gray-200);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color .15s, box-shadow .15s, background .15s;
+}
+ 
+.edit-input:hover,
+.edit-textarea:hover {
+  border-color: var(--ts-gray-300);
+  background: var(--ts-white);
+}
+ 
+.edit-input:focus,
+.edit-textarea:focus {
+  border-color: var(--ts-blue-mid);
+  background: var(--ts-white);
+  box-shadow: 0 0 0 3px rgba(0,87,168,.12);
+}
+ 
+.edit-input {
+  height: 42px;
+  font-weight: 600;
+}
+ 
+.edit-input-hashtags {
+  font-weight: 500;
+  color: var(--ts-blue-mid);
+}
+ 
+.edit-textarea {
+  resize: vertical;
+  line-height: 1.6;
+  min-height: 110px;
+}
+ 
+.edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 24px 18px;
+  border-top: 1px dashed var(--ts-gray-200);
+}
+ 
+.edit-btn-cancel,
+.edit-btn-save {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all .12s;
+  border: 1.5px solid transparent;
+}
+ 
+.edit-btn-cancel {
+  color: var(--ts-gray-700);
+  background: var(--ts-white);
+  border-color: var(--ts-gray-200);
+}
+ 
+.edit-btn-cancel:hover {
+  background: var(--ts-gray-100);
+  border-color: var(--ts-gray-300);
+}
+ 
+.edit-btn-save {
+  color: var(--ts-white);
+  background: var(--ts-blue-mid);
+  box-shadow: 0 2px 10px rgba(0,87,168,.25);
+}
+ 
+.edit-btn-save:hover {
+  background: var(--ts-blue);
+  transform: translateY(-1px);
+}
+ 
+.edited-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ts-blue-mid);
+  background: var(--ts-blue-light);
+  padding: 2px 8px;
+  border-radius: 99px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+ 
+.char-count {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+ 
+.char-count.over-limit { color: var(--ts-red); font-weight: 600; }
+.char-count.near-limit { color: #CA8A04; font-weight: 600; }
+
 /* ─── Error ──────────────────────────────────────────────────── */
 .result-error {
   display: flex;
